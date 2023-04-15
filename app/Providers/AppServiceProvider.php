@@ -19,6 +19,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        //global variable
+        view()->composer('layouts.template', function($view){
+
+            $saludo = 'Hi world';
+
+            $view->with(['constante' => $saludo]);
+
+            });
     }
+
 }
