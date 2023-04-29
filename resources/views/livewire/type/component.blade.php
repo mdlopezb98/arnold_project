@@ -63,10 +63,10 @@
                 cancelButtonText: 'Cancel',
                 closeOnConfirm:false
             }).then((response) => {
-                if(response){
+                if(response.value){
                     console.log('ID', id);
                     window.livewire.emit('deleteRow', id) //AQUI EMITE UN EVENTO Y LOS LISTENER QUE ESTAN AL TANTO EJECUTAN LA FUNCION
-                    toastr.success('info', 'Deleted succefull')
+                    toastr.success( "{{'Deleted succefull'}}", "info", {"iconClass": 'customer-info'});
                     swal.close()
                 }
             })
