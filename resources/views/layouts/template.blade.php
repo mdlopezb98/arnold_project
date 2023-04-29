@@ -88,7 +88,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tipos:</h6>
                         <a class="collapse-item" href="types">Monetario</a>
-                        <a class="collapse-item" href="cards.html">Medida</a>
+                        <a class="collapse-item" href="unit_weight">Medida</a>
                     </div>
                 </div>
             </li>
