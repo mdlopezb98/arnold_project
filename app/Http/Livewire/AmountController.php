@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class Amount extends Component
+class AmountController extends Component
 {
 
     public $text= '';
