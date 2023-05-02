@@ -82,13 +82,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Unidades</span>
+                    <span>Valores Globales</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tipos:</h6>
+                        <h6 class="collapse-header">Nomecladores:</h6>
                         <a class="collapse-item" href="types">Monetario</a>
-                        <a class="collapse-item" href="unit_weight">Medida</a>
+                        <a class="collapse-item" href="unit_weight">Peso</a>
+                        <a class="collapse-item" href="branch">Sucursales</a>
                     </div>
                 </div>
             </li>
@@ -98,14 +99,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Procesos</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <h6 class="collapse-header">Gestion:</h6>
+                        <a class="collapse-item" href="add_monetary_fund">Inyecciones Monetarias</a>
+                        <a class="collapse-item" href="utilities-border.html">Compra/Venta</a>
                         <a class="collapse-item" href="utilities-animation.html">Animations</a>
                         <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>

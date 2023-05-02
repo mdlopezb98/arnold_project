@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('weights', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('relacion_mn');
+            $table->float('relacion_lb', 8, 2);
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('types');
+        Schema::dropIfExists('weights');
     }
 };

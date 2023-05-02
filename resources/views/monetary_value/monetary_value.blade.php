@@ -1,5 +1,5 @@
 @extends('layouts.template')
 
 @section('content')
-    <livewire:weight-controller/>
+    <livewire:monetary-value-controller/>
 @endsection

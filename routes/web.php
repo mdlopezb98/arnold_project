@@ -30,3 +30,7 @@ Route::view('amount','amount.amount');
 Route::view('types','types.type');
 
 Route::view('unit_weight','weights.weight');
+
+Route::view('branch','branchs.branch');
+
+Route::view('add_monetary_fund','monetary_value.monetary_value');

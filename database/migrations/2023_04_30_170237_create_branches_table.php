@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('branches', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->float('relacion_mn');
+            $table->string('name', 50);
+            $table->string('description', 100)->nullable('');
+
+            //rel
+            $table->unsignedBigInteger('user_id');            
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('types');
+        Schema::dropIfExists('branches');
     }
 };

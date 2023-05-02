@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('add_monetary_funds', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->float('relacion_mn');
+            $table->float('monetary_value', 8, 2);
+            //rel
+            $table->unsignedBigInteger('branch_id');            
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('types');
+        Schema::dropIfExists('add_monetary_funds');
     }
 };
