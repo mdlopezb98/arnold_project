@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\WithPagination; //paginations
 use App\Models\add_monetary_fund; //model
 use App\Models\Branch; //model
+use App\Models\Type; //model
+
 use Livewire\Component;
 
 class MonetaryValueController extends Component
@@ -15,7 +17,11 @@ class MonetaryValueController extends Component
 
     //public properties
     public $branchs;
-    public $branch_id = '...'; 
+    public $types;
+
+    public $branch_id = ''; 
+    public $type_id = '';
+
     public $monetary_value; 
    
     public $selected_id, $search;
@@ -28,18 +34,19 @@ class MonetaryValueController extends Component
     public function render()
     {
          //esto es para cargar los usuarios y poder asignarlos al select
-         $branchs = add_monetary_fund::all();
+         $branchs = Branch::all();
+         $types = Type::all();
 
          if(strlen($this->search) > 0) //validar que la variable search tenga algun valor
         {
              $info = add_monetary_fund::where('monetary_value','like', '%' . $this->search  . '%')->paginate($this->pagination);
              return view('livewire.monetary_value.component', [
-                 'info' => $info, 'data' => $branchs
+                 'info' => $info, 'data' => $branchs, 'data_type' => $types
              ]);
         }
         else{
              return view('livewire.monetary_value.component', [
-                 'info' => add_monetary_fund::paginate($this->pagination),'data' => $branchs //orderBy('name', 'DESC')
+                 'info' => add_monetary_fund::paginate($this->pagination),'data' => $branchs, 'data_type' => $types //orderBy('name', 'DESC')
              ]);
         }
     }
@@ -59,7 +66,8 @@ class MonetaryValueController extends Component
      //limpiar todas las variables
      public function resetInput()
      {
-         $this->branch_id = '...';
+         $this->branch_id = null;
+         $this->type_id = null;
          $this->monetary_value = '';
          $this->selected_id = null;
          $this->action = 1;
@@ -72,6 +80,7 @@ class MonetaryValueController extends Component
          $record = add_monetary_fund::findOrFail($id);
  
          $this->branch_id = $record->branch_id;
+         $this->type_id = $record->type_id;
          $this->monetary_value = $record->monetary_value;
          $this->selected_id = $record->id;
          $this->action = 2;
@@ -83,7 +92,8 @@ class MonetaryValueController extends Component
          //validar descripcion
          $this->validate([
              'monetary_value' => 'required',
-             'branch_id' => 'required'
+             'branch_id' => 'required',
+             'type_id' => 'required',
          ]);
  
          if($this->selected_id <= 0){ //se esta creando un registro
@@ -91,6 +101,7 @@ class MonetaryValueController extends Component
              $record = add_monetary_fund::create([
                  'monetary_value' => $this->monetary_value,
                  'branch_id' => $this->branch_id,
+                 'type_id' => $this->type_id,
              ]);
          }
          else
@@ -101,6 +112,7 @@ class MonetaryValueController extends Component
              $record->update([
                  'monetary_value' => $this->monetary_value,
                  'branch_id' => $this->branch_id,
+                 'type_id' => $this->type_id,
              ]);
          }
  

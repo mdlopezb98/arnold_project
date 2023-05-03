@@ -28,7 +28,11 @@
                         <?php $c = $r->user_id?>
                         <td><p class="mb-0">{{$r->name}}</p></td>
                         <td>{{$r->description}}</td>
-                        <td>{{$data[($r->user_id) - 1]['name']}}</td>
+                        <td>@foreach($data as $u)
+                                @if($u['id'] == $r->user_id) 
+                                    {{$u->name}}
+                                @endif 
+                            @endforeach</td>
                         <td>{{$r->created_at}}</td>
                         <td class="text-center">
                             @include('common.actions')

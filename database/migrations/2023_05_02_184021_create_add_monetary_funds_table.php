@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->float('monetary_value', 8, 2);
             //rel
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('types');
             $table->unsignedBigInteger('branch_id');            
             $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();

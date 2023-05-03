@@ -26,9 +26,17 @@
                     @foreach($info as $r)
                     <tr>
                         <?php $c = $r->user_id?>
-                        <td><p class="mb-0">{{$r->name}}</p></td>
-                        <td>{{$r->description}}</td>
-                        <td>{{$data[($r->user_id) - 1]['name']}}</td>
+                        <td><p class="mb-0">{{$r->monetary_value}}</p></td>
+                        <td>@foreach($data_type as $type)
+                                @if($type['id'] == $r->type_id) 
+                                    {{$type->name}}
+                                @endif 
+                            @endforeach</td>
+                        <td>@foreach($data as $b)
+                                @if($b['id'] == $r->branch_id) 
+                                    {{$b->name}}
+                                @endif 
+                            @endforeach</td>
                         <td>{{$r->created_at}}</td>
                         <td class="text-center">
                             @include('common.actions')
@@ -44,7 +52,7 @@
 
 
     @elseif($action == 2)
-    @include('livewire.branch.form')
+    @include('livewire.monetary_value.form')
     @endif
 
     <!-- Function delete -->
