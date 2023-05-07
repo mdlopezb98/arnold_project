@@ -34,3 +34,9 @@ Route::view('unit_weight','weights.weight');
 Route::view('branch','branchs.branch');
 
 Route::view('add_monetary_fund','monetary_value.monetary_value');
+
+Route::view('product','product.product');
+
+Route::view('merma','merma.merma');
+
+Route::view('mov','mov.mov');

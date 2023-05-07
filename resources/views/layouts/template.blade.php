@@ -90,6 +90,7 @@
                         <a class="collapse-item" href="types">Monetario</a>
                         <a class="collapse-item" href="unit_weight">Peso</a>
                         <a class="collapse-item" href="branch">Sucursales</a>
+                        <a class="collapse-item" href="product">Productos</a>
                     </div>
                 </div>
             </li>
@@ -106,9 +107,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Gestion:</h6>
                         <a class="collapse-item" href="add_monetary_fund">Inyecciones Monetarias</a>
-                        <a class="collapse-item" href="utilities-border.html">Compra/Venta</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <a class="collapse-item" href="mov">Compra/Venta</a>
+                        <a class="collapse-item" href="merma">Merma</a>
                     </div>
                 </div>
             </li>
